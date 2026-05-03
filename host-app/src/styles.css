@@ -1,0 +1,433 @@
+/* HDFC Bank Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%);
+  min-height: 100vh;
+  color: #172d4d;
+}
+
+/* App Shell */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: transparent;
+}
+
+/* Burger Menu Button */
+.burger-btn {
+  position: fixed;
+  left: 12px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.burger-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Slide-in Menu */
+.burger-menu {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  z-index: 1002;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+  overflow-y: auto;
+}
+
+.burger-menu.open {
+  left: 0;
+}
+
+.burger-menu-header {
+  padding: 20px 16px;
+  background: #0057A4;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.burger-menu-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.burger-menu-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.burger-menu-nav a {
+  padding: 14px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.burger-menu-nav a:hover,
+.burger-menu-nav a.active {
+  background: #f5f7fa;
+  color: #0057A4;
+}
+
+/* Overlay */
+.burger-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Breadcrumb Bar Container */
+
+/* Breadcrumb container now inside main content area */
+.breadcrumb-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+}
+
+/* Top row - Logo, and Header items */
+.breadcrumb-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 10px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.breadcrumb-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.breadcrumb-slogan {
+  font-size: 13px;
+  color: #52607d;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Header items inside breadcrumb-top */
+.breadcrumb-top .header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.breadcrumb-top .last-login {
+  font-size: 13px;
+  color: #5f6d7a;
+}
+
+.breadcrumb-top .header-user {
+  background: rgba(0, 87, 164, 0.1);
+  color: #003a70;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.breadcrumb-top .header-bell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #f1f6ff;
+  color: #0057a4;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.breadcrumb-logo {
+  height: 24px;
+  width: auto;
+}
+
+/* Blue bar - Module name */
+.breadcrumb-bar {
+  background: #0057A4;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 16px 16px;
+  margin: 0 0 16px;
+}
+
+.breadcrumb-module {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Collapsible Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  transition: width 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar.expanded {
+  width: 260px;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  height: 66px;
+  padding: 0 13px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.sidebar-toggle-btn:hover {
+  background: #f4f8ff;
+}
+
+.sidebar-menu-logo {
+  width: 35px;
+  height: 35px;
+  fill: #003a70;
+}
+
+.sidebar-menu-text {
+  font-size: 13px;
+  color: #003a70;
+  font-weight: 600;
+}
+
+.sidebar:not(.expanded) .sidebar-menu-text {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+/* Sidebar Menu Button (Burger) */
+.sidebar-menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #22334d;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background: #eef5ff;
+  color: #003a70;
+  transform: translateX(2px);
+}
+
+.sidebar-icon {
+  font-size: 20px;
+  min-width: 26px;
+  text-align: center;
+}
+
+.link-text {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-width 0.3s ease;
+}
+
+.sidebar.expanded .link-text {
+  max-width: 360px;
+  opacity: 1;
+}
+
+.beta-badge {
+  background: #e67e22;
+  color: white;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+/* Main Content */
+.main-content-area {
+  margin-left: 60px;
+  margin-top: 0;
+  transition: margin-left 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.hdfc-content {
+  padding: 0px 32px 34px;
+  min-width: 0;
+  background: transparent;
+  min-height: calc(100vh - 88px);
+}
+
+.module-error-card {
+  max-width: 620px;
+  margin: 24px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(23, 45, 77, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.module-error-icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.module-error-card h2 {
+  margin-bottom: 10px;
+  color: #0f2f57;
+  font-size: 22px;
+}
+
+.module-error-card p {
+  margin-bottom: 22px;
+  color: #53627c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.module-error-button {
+  padding: 10px 24px;
+  background: #0057a4;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.module-error-button:hover {
+  background: #004a88;
+}
+
+.hdfc-content > .content-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(23, 45, 77, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 28px;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  gap: 15px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #ecf0f1;
+  border-top: 3px solid #0057A4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Module Container */
+.module-container {
+  padding: 15px;
+}
+
+.module-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+}

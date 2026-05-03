@@ -1,0 +1,38 @@
+/* Module Styles */
+.module-container {
+  padding: 20px;
+}
+
+.module-header {
+  margin-bottom: 30px;
+}
+
+.module-header h1 {
+  color: #db3800;
+  font-size: 28px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.module-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.module-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.beta-badge {
+  background: #ff9800;
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
