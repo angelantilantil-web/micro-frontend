@@ -1,11 +1,11 @@
-# HDFC Micro Frontend Project
+#  Micro Frontend Project
 
-A micro-frontend architecture project for HDFC Bank with a host shell and several independent remote modules.
+A micro-frontend architecture project for  Bank with a host shell and several independent remote modules.
 
 ## Project Structure
 
 ```
-hdfc-micro-frontend/
+micro-frontend/
 ├── host-app/                      # Main container application
 ├── business-reports/              # Business reports module
 ├── incoming-api-logs/             # Incoming API logs module
