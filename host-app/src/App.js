@@ -51,6 +51,10 @@ const VroUploads = React.lazy(() => import('vroUploads/VroUploadsApp').catch(err
   console.error('VRO Uploads module failed to load', error);
   return { default: () => <ModuleLoadUnavailable moduleName="VRO Uploads" /> };
 }));
+const AIAgent = React.lazy(() => import('aiAgent/AIAgentApp').catch(error => {
+  console.error('AI Agent module failed to load', error);
+  return { default: () => <ModuleLoadUnavailable moduleName="AI Agent Chatbot" /> };
+}));
 
 function LoadingFallback() {
   return (
@@ -115,7 +119,8 @@ const moduleNames = {
   '/incoming-api': 'Incoming API Logs',
   '/http-access-logs': 'HTTP Access Logs',
   '/maker-requests': 'Maker Requests',
-  '/vro-uploads': 'VRO Uploads'
+  '/vro-uploads': 'VRO Uploads',
+  '/ai-agent': 'AI Agent Chatbot'
 };
 
 function Breadcrumb() {
@@ -178,6 +183,9 @@ function Header({ menuOpen, setMenuOpen }) {
           <NavLink to="/vro-uploads" onClick={() => setMenuOpen(false)}>
             📁 VRO Uploads
           </NavLink>
+          <NavLink to="/ai-agent" onClick={() => setMenuOpen(false)}>
+            🤖 AI Agent Chatbot
+          </NavLink>
         </nav>
       </div>
       
@@ -209,6 +217,7 @@ function App() {
             <Link to="/http-access-logs" className="sidebar-link" onClick={() => setSidebarExpanded(false)}><span className="sidebar-icon">🌐</span> <span className="link-text">HTTP Access Logs</span></Link>
             <Link to="/maker-requests" className="sidebar-link" onClick={() => setSidebarExpanded(false)}><span className="sidebar-icon">📝</span> <span className="link-text">Maker Requests</span></Link>
             <Link to="/vro-uploads" className="sidebar-link" onClick={() => setSidebarExpanded(false)}><span className="sidebar-icon">📁</span> <span className="link-text">VRO Uploads <span className="beta-badge">(Beta Mode)</span></span></Link>
+            <Link to="/ai-agent" className="sidebar-link" onClick={() => setSidebarExpanded(false)}><span className="sidebar-icon">🤖</span> <span className="link-text">AI Agent Chatbot</span></Link>
           </nav>
         </aside>
 
@@ -226,6 +235,7 @@ function App() {
                   <Route path="/http-access-logs" element={<div style={{padding:32}}>HTTP Access Logs (Placeholder)</div>} />
                   <Route path="/maker-requests" element={<MakerRequests />} />
                   <Route path="/vro-uploads" element={<VroUploads />} />
+                  <Route path="/ai-agent" element={<AIAgent />} />
                   <Route path="/" element={<div style={{padding:32}}>Select a module from the menu.</div>} />
                 </Routes>
               </Suspense>

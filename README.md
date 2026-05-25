@@ -12,6 +12,7 @@ hdfc-micro-frontend/
 ├── maker-requests/                # Maker requests module
 ├── model-portfolio-configuration/ # Model portfolio configuration module
 ├── outgoing-api-logs/             # Outgoing API logs module
+├── ai-agent-module/               # AI Agent chatbot module
 └── vro-uploads/                   # VRO uploads module
 ```
 
@@ -26,11 +27,7 @@ This project uses **Webpack Module Federation** to implement a micro-frontend ar
   - `maker-requests`
   - `model-portfolio-configuration`
   - `outgoing-api-logs`
-  - `vro-uploads`
-
-## Prerequisites
-
-- Node.js (v18 or higher)
+- `ai-agent-module`
 - npm or yarn
 
 ## Installation
@@ -54,6 +51,9 @@ cd ../model-portfolio-configuration
 npm install
 
 cd ../outgoing-api-logs
+npm install
+
+cd ../ai-agent-module
 npm install
 
 cd ../vro-uploads
@@ -83,6 +83,9 @@ cd model-portfolio-configuration
 npm start
 
 cd outgoing-api-logs
+npm start
+
+cd ai-agent-module
 npm start
 
 cd vro-uploads

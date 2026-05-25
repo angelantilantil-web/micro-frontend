@@ -12,7 +12,7 @@ module.exports = {
     clean: true
   },
   devServer: {
-    port: 3000,
+    port: 3016,
     historyApiFallback: {
       rewrites: [{ from: /./, to: '/' }]
     },
@@ -42,16 +42,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'hdfcHostApp',
+      name: 'aiAgent',
       filename: 'remoteEntry.js',
-      remotes: {
-        businessReports: 'businessReports@http://localhost:3010/remoteEntry.js',
-        modelPortfolio: 'modelPortfolio@http://localhost:3011/remoteEntry.js',
-        outgoingApiLogs: 'outgoingApiLogs@http://localhost:3012/remoteEntry.js',
-        incomingApiLogs: 'incomingApiLogs@http://localhost:3013/remoteEntry.js',
-        makerRequests: 'makerRequests@http://localhost:3014/remoteEntry.js',
-        vroUploads: 'vroUploads@http://localhost:3015/remoteEntry.js',
-        aiAgent: 'aiAgent@http://localhost:3016/remoteEntry.js'
+      exposes: {
+        './AIAgentApp': './src/App.js'
       },
       shared: {
         react: {

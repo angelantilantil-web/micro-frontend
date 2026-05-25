@@ -8,6 +8,8 @@ start cmd /k "cd /d %~dp0outgoing-api-logs && npm start"
 start cmd /k "cd /d %~dp0incoming-api-logs && npm start"
 start cmd /k "cd /d %~dp0maker-requests && npm start"
 start cmd /k "cd /d %~dp0vro-uploads && npm start"
+start cmd /k "cd /d %~dp0ai-agent-backend && python -m uvicorn app:app --reload --host 0.0.0.0 --port 8000"
+start cmd /k "cd /d %~dp0ai-agent-module && npm start"
 
 echo All modules and host are starting in separate terminals.
 pause
